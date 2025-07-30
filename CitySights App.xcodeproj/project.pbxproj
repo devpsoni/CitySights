@@ -6,17 +6,30 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		26FB56DA2E39FFA000F3D8A9 /* Business.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26FB56D12E39FFA000F3D8A9 /* Business.swift */; };
+		26FB56DB2E39FFA000F3D8A9 /* BusinessSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26FB56D22E39FFA000F3D8A9 /* BusinessSearch.swift */; };
+		26FB56DC2E39FFA000F3D8A9 /* CitySights_AppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26FB56D52E39FFA000F3D8A9 /* CitySights_AppApp.swift */; };
+		26FB56DD2E39FFA000F3D8A9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26FB56D72E39FFA000F3D8A9 /* ContentView.swift */; };
+		26FB56DE2E39FFA000F3D8A9 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26FB56D82E39FFA000F3D8A9 /* DataService.swift */; };
+		26FB56DF2E39FFA000F3D8A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26FB56D42E39FFA000F3D8A9 /* Assets.xcassets */; };
+		26FB56E02E39FFA000F3D8A9 /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 26FB56D62E39FFA000F3D8A9 /* Config.xcconfig */; };
+		26FB56E32E39FFC800F3D8A9 /* Texthelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26FB56E22E39FFC800F3D8A9 /* Texthelper.swift */; };
+		26FB56E52E3A041800F3D8A9 /* RatingHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26FB56E42E3A041800F3D8A9 /* RatingHelper.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		26FB56972E389CC900F3D8A9 /* CitySights App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CitySights App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		26FB56D12E39FFA000F3D8A9 /* Business.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Business.swift; sourceTree = "<group>"; };
+		26FB56D22E39FFA000F3D8A9 /* BusinessSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessSearch.swift; sourceTree = "<group>"; };
+		26FB56D42E39FFA000F3D8A9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		26FB56D52E39FFA000F3D8A9 /* CitySights_AppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitySights_AppApp.swift; sourceTree = "<group>"; };
+		26FB56D62E39FFA000F3D8A9 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
+		26FB56D72E39FFA000F3D8A9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		26FB56D82E39FFA000F3D8A9 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		26FB56E22E39FFC800F3D8A9 /* Texthelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Texthelper.swift; sourceTree = "<group>"; };
+		26FB56E42E3A041800F3D8A9 /* RatingHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
-
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		26FB56992E389CC900F3D8A9 /* CitySights App */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = "CitySights App";
-			sourceTree = "<group>";
-		};
-/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		26FB56942E389CC900F3D8A9 /* Frameworks */ = {
@@ -32,7 +45,7 @@
 		26FB568E2E389CC900F3D8A9 = {
 			isa = PBXGroup;
 			children = (
-				26FB56992E389CC900F3D8A9 /* CitySights App */,
+				26FB56D92E39FFA000F3D8A9 /* CitySights App */,
 				26FB56982E389CC900F3D8A9 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -43,6 +56,38 @@
 				26FB56972E389CC900F3D8A9 /* CitySights App.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		26FB56D32E39FFA000F3D8A9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				26FB56D12E39FFA000F3D8A9 /* Business.swift */,
+				26FB56D22E39FFA000F3D8A9 /* BusinessSearch.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		26FB56D92E39FFA000F3D8A9 /* CitySights App */ = {
+			isa = PBXGroup;
+			children = (
+				26FB56E12E39FFA300F3D8A9 /* Helpers */,
+				26FB56D32E39FFA000F3D8A9 /* Model */,
+				26FB56D42E39FFA000F3D8A9 /* Assets.xcassets */,
+				26FB56D52E39FFA000F3D8A9 /* CitySights_AppApp.swift */,
+				26FB56D62E39FFA000F3D8A9 /* Config.xcconfig */,
+				26FB56D72E39FFA000F3D8A9 /* ContentView.swift */,
+				26FB56D82E39FFA000F3D8A9 /* DataService.swift */,
+			);
+			path = "CitySights App";
+			sourceTree = "<group>";
+		};
+		26FB56E12E39FFA300F3D8A9 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				26FB56E22E39FFC800F3D8A9 /* Texthelper.swift */,
+				26FB56E42E3A041800F3D8A9 /* RatingHelper.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -59,9 +104,6 @@
 			buildRules = (
 			);
 			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				26FB56992E389CC900F3D8A9 /* CitySights App */,
 			);
 			name = "CitySights App";
 			packageProductDependencies = (
@@ -109,6 +151,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26FB56DF2E39FFA000F3D8A9 /* Assets.xcassets in Resources */,
+				26FB56E02E39FFA000F3D8A9 /* Config.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,6 +163,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26FB56DA2E39FFA000F3D8A9 /* Business.swift in Sources */,
+				26FB56DB2E39FFA000F3D8A9 /* BusinessSearch.swift in Sources */,
+				26FB56E52E3A041800F3D8A9 /* RatingHelper.swift in Sources */,
+				26FB56DC2E39FFA000F3D8A9 /* CitySights_AppApp.swift in Sources */,
+				26FB56DD2E39FFA000F3D8A9 /* ContentView.swift in Sources */,
+				26FB56E32E39FFC800F3D8A9 /* Texthelper.swift in Sources */,
+				26FB56DE2E39FFA000F3D8A9 /* DataService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -127,8 +178,7 @@
 /* Begin XCBuildConfiguration section */
 		26FB56A02E389CCB00F3D8A9 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReferenceAnchor = 26FB56992E389CC900F3D8A9 /* CitySights App */;
-			baseConfigurationReferenceRelativePath = Config.xcconfig;
+			baseConfigurationReference = 26FB56D62E39FFA000F3D8A9 /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -193,8 +243,7 @@
 		};
 		26FB56A12E389CCB00F3D8A9 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReferenceAnchor = 26FB56992E389CC900F3D8A9 /* CitySights App */;
-			baseConfigurationReferenceRelativePath = Config.xcconfig;
+			baseConfigurationReference = 26FB56D62E39FFA000F3D8A9 /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;

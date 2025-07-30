@@ -29,10 +29,30 @@ struct ContentView: View {
                         .cornerRadius(10)
                 }
             }
-            .padding()
-            List (businesses) { business in
-                Text(business.name ?? "No Name")
+            List {
+                ForEach(businesses) { b in
+                    
+                    VStack {
+                        HStack (spacing: 0){
+                            Image("list-placeholder-image")
+                                .padding(.trailing, 16)
+                            VStack (alignment: .leading){
+                                Text(b.name ?? "Restaurant")
+                                    .font(.headline)
+                                Text(Texthelper.distanceAwayText(meters: b.distance ?? 0))
+                                    .font(Font.system(size: 16))
+                                    .foregroundColor(.secondary)
+                            }
+                            .padding(.bottom, 20)
+                            Spacer()
+                            Image(RatingHelper.assetName(for: b.rating ?? 0.0))
+                        }
+                        Divider()
+                    }
+                }
+                .listRowSeparator(.hidden)
             }
+            .listStyle(.plain)
         }
         .task {
             businesses = await service.businessService()
