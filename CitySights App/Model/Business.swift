@@ -22,12 +22,14 @@ struct Business: Decodable, Identifiable {
     var rating: Double?
     var reviewCount: Int?
     var url: String?
+    var businessHours: [BusinessHour]?
     
     enum CodingKeys: String, CodingKey {
         case displayPhone = "display_phone"
         case isClosed = "is_closed"
         case imageUrl = "image_url"
         case reviewCount = "review_count"
+        case businessHours = "business_hours"
         
         case id
         case name
@@ -39,6 +41,14 @@ struct Business: Decodable, Identifiable {
         case phone
         case rating
         case url
+    }
+}
+
+struct BusinessHour: Decodable {
+    var isOpen: Bool?
+    
+    enum CodingKeys: String, CodingKey {
+        case isOpen = "is_open_now"
     }
 }
 
