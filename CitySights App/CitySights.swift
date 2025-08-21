@@ -22,6 +22,7 @@ struct CitySights: App {
                     needsOnboarding = false
                 } content: {
                     OnBoardingView()
+                        .environment(model)
                 }
 
         }
