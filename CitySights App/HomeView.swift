@@ -11,6 +11,15 @@ struct HomeView: View {
     
     @Environment(BusinessModel.self) var model
     @State var selectedTab = 0
+    
+    @State var query: String = ""
+    @FocusState var queryBoxFocused: Bool
+    
+    @State var showOptions = false // For animating the the top options panel
+    
+    @State var popularOn = false
+    @State var dealsOn = false
+    @State var categorySelection = "Restaurants"
 
     var body: some View {
         
@@ -18,18 +27,56 @@ struct HomeView: View {
         
         VStack {
             HStack {
-                TextField("What are you looking for?", text: $model.query)
+                TextField("What are you looking for?", text: $query)
+                    .textFieldStyle(.roundedBorder)
+                    .focused($queryBoxFocused)
+                    .onTapGesture {
+                        queryBoxFocused = true
+                        withAnimation {
+                            showOptions = true
+                        }
+                    }
                 Button {
-                    // TODO: Implement Query
+                    withAnimation {
+                        showOptions = false
+                        queryBoxFocused = false
+                    }
+                    // Perform a search
+                    model.getBusinesses(query: query, options: getOptionsString(), category: categorySelection)
                 } label: {
                     Text("Go")
                         .padding(.horizontal)
                         .padding(.vertical, 10)
                         .background(.blue)
                         .foregroundColor(.white)
-                        .cornerRadius(10)
+                        .cornerRadius(6)
+                        .frame(height: 32)
                 }
             }
+            .padding(.horizontal)
+            
+            // Query Options. Show if textbox is focused
+            if showOptions {
+                VStack{
+                    Toggle("Popular", isOn: $popularOn)
+                    Toggle("Deals", isOn: $dealsOn)
+                    
+                    HStack {
+                        Text("Category")
+                        Spacer()
+                        Picker("Category", selection: $categorySelection) {
+                            Text("Restaurants")
+                                .tag("restaurants")
+                            Text("Arts")
+                                .tag("arts")
+                        }
+                    }
+                }
+                .padding(.horizontal, 40)
+                .transition(.scale)
+            }
+            
+            
             // Show Picker
             Picker("", selection: $selectedTab) {
                 Text("List")
@@ -38,22 +85,46 @@ struct HomeView: View {
                     .tag(1)
             }
             .pickerStyle(SegmentedPickerStyle())
+            .padding(.horizontal)
             
             // Show Map or List
             if selectedTab == 1 {
                 MapView()
+                    .onTapGesture {
+                        withAnimation {
+                            showOptions = false
+                            queryBoxFocused = false
+                        }
+                    }
             }
             else {
                 ListView()
+                    .onTapGesture {
+                        withAnimation {
+                            queryBoxFocused = false
+                        }
+                    }
             }
             
         }
         .onAppear {
-            model.getBusinesses()
+            model.getBusinesses(query: nil, options: nil, category: nil)
         }
         .sheet(item: $model.selectedBusiness){ item in
             BusinessDetailView()
         }
+    }
+    
+    func getOptionsString() -> String {
+        var optionsArray = [String]()
+        if popularOn {
+            optionsArray.append("hot_and_new")
+        }
+        if dealsOn {
+            optionsArray.append("deals")
+        }
+        return optionsArray.joined(separator: ",")
+        
     }
 }
 
